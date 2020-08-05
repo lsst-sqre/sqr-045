@@ -104,3 +104,4 @@ Questions
 #. It looks from the documentation like COmanage supports deactivating an account.
    Does this have the properties that we're looking for in a frozen account?
    Specifically, we want it to stop successful authentication to anything other than the account metadata page (or to no part of the system at all), but preserve all of the data.
+#. How much of the current identity.lsst.org service is using COmanage?
