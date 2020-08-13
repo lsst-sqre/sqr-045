@@ -37,14 +37,18 @@ authors:
 copyright: "2020, Association of Universities for Research in Astronomy, Inc. (AURA)"
 
 # Description. A short, 1-2 sentence statemement used by document indices.
-description: "The Rubin Science Platform will require an identity management system. One attractive option is to build it on top of CILogon's managed COmanage service, which is designed for scientific collaborations. This document compares COmanage's functionality with the Rubin Science Platform requirements."
+description: >
+  An evaluation and gap analysis of CILogon's managed COmanage service as
+  the basis for the identity management system for the Rubin Science
+  Platform.
 
 # Abstract, if available
-# abstract: >
-#           Write your paragraph
-#           here with multiple lines.
-#
-#           You can have multiple paragraphs too.
+abstract: >
+  The Rubin Science Platform will require an identity management
+  system. One attractive option is to build it on top of CILogon's managed
+  COmanage service, which is designed for scientific collaborations. This
+  document compares COmanage's functionality with the Rubin Science
+  Platform requirements documented in SQR-044.
 
 # URL where this document is published by Read the Docs. e.g. http://sqr-001.lsst.codes
 url: "https://sqr-045.lsst.io"
