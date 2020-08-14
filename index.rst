@@ -108,6 +108,46 @@ If we needed that feature (IDM-2009), we would need to add Grouper, provision CO
 However, COmanage does support COU sub-organizations with separate administrators, which may provide the same functionality.
 Administrators could be given the ability to add and remove users from COmanage Registry groups in their COU.
 
+Possible design
+===============
+
+A possible design for an identity management system satisfying the requirements of `SQR-044`_ and built on COmanage:
+
+.. figure:: /_static/architecture.png
+   :name: Identity management architecture
+
+   Identity management architecture
+
+This omits much of the detail of the Science Platform services, including only the notebook and VO services as examples.
+See `SQR-039`_ for more details if needed.
+
+.. _SQR-039: https://sqr-039.lsst.io/
+
+Use CILogon for user authentication.
+Use COmanage to handle the user enrollment flow.
+This includes an approval flow where necessary, and a reauthorization flow to reconfirm identity where necessary.
+Use COmanage to manage user metadata (email, full name), linked identities, and user affiliation.
+Add COmanage plugins as necessary to customize the enrollment and reauthorization flows.
+
+Use COmanage Registry groups for user ad hoc groups.
+Use COUs for larger collaborations where it's necessary to delegate group ownership to a group of collabration administrators.
+
+Write an Account UI for the user hosted in the Science Platform.
+This would link to or incorporate information from COmanage and Science Platform services to present a unified view or at least a single landing page of links to the user for the services they'll need to interact with.
+
+Manage tokens via a Token Issuer deployed in the Science Platform.
+Display the user's tokens via the Account UI.
+
+Manage quotas via a Quota Manager deployed in the Science Platform.
+This would store the data in COmanage Registry as attributes on users and groups, but would provide a higher-level API to that information that handles quota math and related decisions.
+Users would manage quotas via the Account UI (instead of adding another COmanage plugin).
+
+Services in the Science Platform would ask an Authorizer service to make authorization decisions or get metadata about the user.
+This would in turn reference the same backing store as the Token Issuer, as well as the LDAP directory provided by COmanage.
+This avoids having to teach other Science Platform services how to speak LDAP (something that we want to avoid).
+
+All user authentications and authorizations to the Science Platform would be logged, and that log information collected and summarized as a data source for the Account UI to show the user authentication history, token usage, etc.
+
 .. _questions:
 
 Questions
