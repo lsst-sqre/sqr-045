@@ -13,6 +13,21 @@ This document compares COmanage's functionality with the Rubin Science Platform 
 
 This analysis is based primarily on the CILogon response to the Rubin Science Platform requirements document.
 
+.. warning::
+
+   This tech note documents part of the process used to arrive at the current identity management design.
+   Its findings have been incorporated in the design and, in many cases, substantially modified, so this tech note is primarily of historical interest.
+   For documentation of the current COmanage configuration for the Science Platform, see SQR-055_.
+
+   This is part of a tech note series on identity management for the Rubin Science Platform.
+   The primary documents are DMTN-234_, which describes the high-level design; DMTN-224_, which describes the implementation; and SQR-069_, which provides a history and analysis of the decisions underlying the design and implementation.
+   See the `references section of DMTN-224 <https://dmtn-224.lsst.io/#references>`__ for a complete list of related documents.
+
+.. _DMTN-234: https://dmtn-234.lsst.io/
+.. _DMTN-224: https://dmtn-224.lsst.io/
+.. _SQR-055: https://sqr-055.lsst.io/
+.. _SQR-069: https://sqr-069.lsst.io/
+
 Methodology
 ===========
 
